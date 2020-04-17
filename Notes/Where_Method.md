@@ -1,4 +1,5 @@
 # Where method is a very method that comes aloing with PowerShell V4. This Where method can be used to replace Where-Object. Look at the examples below.
+# Source: PowerShell In Depth Page No 90
 
 Get-Process | Where-Object -FilterScript {$_.workingset -gt 1mb -AND $_.company -notmatch "Microsoft"}
 Get-Process | Where {$_.workingset -gt 1mb -AND $_.company -notmatch "Microsoft"}
