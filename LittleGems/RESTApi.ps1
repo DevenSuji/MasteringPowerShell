@@ -1,0 +1,1 @@
+Get-Service | Stop-Process –whatif
