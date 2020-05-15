@@ -34,6 +34,6 @@ $props = [Ordered]@{ComputerName = $os.CSName
 } # Combining the hash table
 
 $obj = New-Object -TypeName PSObject -Property $props
-Write-Output $obj
+Write-Output $obj | ft
 
 $obj | gm
