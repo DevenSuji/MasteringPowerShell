@@ -1,8 +1,11 @@
+[CmdletBinding()]
+param (
+    [Parameter(Mandatory = $True)]
+    [String]$MachineName
+)
 try {
-    #Get-Content c:\filedoesnotexist.txt -ErrorAction Stop
-    Get-Content C:\Users\sujide01\Documents\Notepads\Junke.txt -ErrorAction Stop
-    Write-Output "File Exists"
+    Get-ADComputer -Identity $MachineName -ErrorAction Stop
 }
 catch {
-    Write-Output "File does not exist"
+    Write-Output "Machine does not exist"
 }
