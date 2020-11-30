@@ -9,9 +9,9 @@ function Get-RemoteListeningConfiguration {
     ) # param
 
     Begin {
-        $ports = 22, 5985, 5986
     } # Begin
     Process {
+        $ports = 22, 5985, 5986
         foreach ($Computer in $ComputerName) {
             foreach ($port in $ports) {
                 Test-NetConnection -Port $port -ComputerName $Computer -ErrorAction SilentlyContinue -WarningAction SilentlyContinue | Select-Object ComputerName, RemotePort, TCPTestSucceeded
